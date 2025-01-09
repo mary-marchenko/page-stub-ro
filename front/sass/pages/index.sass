@@ -1,0 +1,189 @@
+$blue: #000055
+$dark-blue: #000022
+$white: #ffffff
+$green: #05C489
+$green-hover: #00EAA1
+$dark-theme-color: #191A23
+
+$font-robotoCondensed-bold: RobotoCondensed-Bold, sans-serif
+$font-gawaa-italic: Gawaa-Italic, sans-serif
+
+.dark-btn
+  position: absolute
+  right: 0
+  top: 0
+  width: 50px
+  height: 35px
+  cursor: pointer
+  z-index: 10
+
+body
+  overscroll-behavior: none
+  //background: $dark-blue
+  background-color: #00EAA1
+  img
+    max-width: 100%
+    height: auto
+
+// DARK THEME
+.dark
+  .stub-page
+    background: $dark-theme-color
+    .main
+      &::before
+        background: linear-gradient(0deg, #191A23, transparent 95%)
+// END DARK THEME
+
+.stub-page
+  position: relative
+  width: 100%
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  overscroll-behavior: none
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  background: $dark-blue
+  height: 695px
+  overflow: hidden
+  .main
+    display: flex
+    justify-content: space-around
+    width: 1001px
+    height: 470px
+    position: relative
+    margin-top: 50px
+    background: url("../img/bg-desk.png") no-repeat 14% -28%/cover
+    @media screen and (max-width: 1024px)
+      background: url("../img/bg-desk.png") no-repeat 69% -28%/cover
+    @media screen and (max-width: 600px)
+      background: url("../img/bg-mob.png") no-repeat 50% 25%/cover
+    &::before
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 250px
+      background: linear-gradient(0deg, #000022, transparent 95%)
+      z-index: 1
+    &__left
+      display: flex
+      flex-direction: column
+      justify-content: center
+      height: 100%
+      width: 375px
+      margin-left: 87px
+      min-width: 375px
+      z-index: 2
+      &-txt
+        color: $white
+        font-family: $font-robotoCondensed-bold
+        font-size: 24px
+        text-transform: uppercase
+        margin-bottom: 14px
+        margin-top: -50px
+      &-btn
+        padding: 15px 20px 14px
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 2px
+        background-color: $green
+        font-family: $font-robotoCondensed-bold
+        font-size: 18px
+        color: $blue
+        text-transform: uppercase
+        max-width: fit-content
+        &:hover
+          background-color: $green-hover
+    &__right
+      position: relative
+      height: 100%
+      margin-left: -62px
+      margin-top: 32px
+      z-index: 2
+      .koala
+        margin-right: 41px
+        margin-top: -83px
+        width: 601px
+        height: 585px
+        background: url("../img/sem.png") no-repeat 50% 50%/cover
+        @media screen and (max-width: 600px)
+          background: url("../img/sem-mob.png") no-repeat 50% 50%/cover
+    .bubble
+        position: absolute
+        top: -125px
+        left: -27px
+        width: 284px
+        height: 224px
+        background: url("../img/bubble.png") no-repeat 0 0/cover
+        @media screen and (max-width: 600px)
+          background: url("../img/bubble-mob.png") no-repeat 0 0/cover
+        animation: neonBlink 2.5s linear forwards
+        &-txt
+          position: absolute
+          text-align: center
+          top: 92px
+          left: 57px
+          font-family: $font-gawaa-italic
+          font-size: 30px
+          text-shadow: 0px 0px 11px #00C6FF, 0px 0px 20px rgba(0, 198, 255, 0.62), 0px 0px 20px rgba(0, 198, 255, 0.62), 0px 0px 20px rgba(0, 198, 255, 0.62), 0px 0px 15px rgba(0, 198, 255, 0.62)
+          line-height: 22px
+          color: $white
+          transform: rotate(-6.478deg)
+          width: 164px
+    .icons
+      position: absolute
+      top: 0
+      right: 0
+      &-top
+        position: absolute
+        top: -30px
+        right: 196px
+        background: url("../img/logo-top.png") no-repeat 50% 50%/cover
+        width: 55px
+        height: 50px
+        animation: floatUpDown2 2s ease-in-out infinite
+      &-marks
+        position: absolute
+        top: -15px
+        right: 85px
+        background: url("../img/marks.png") no-repeat 50% 50%/cover
+        width: 129px
+        height: 82px
+        animation: floatUpDown 3s ease-in-out infinite
+      &-bottom
+        position: absolute
+        bottom: -404px
+        right: 231px
+        background: url("../img/logo-bottom.png") no-repeat 50% 50%/cover
+        width: 128px
+        height: 98px
+        animation: floatUpDown 3s ease-in-out infinite
+      &-left
+        position: absolute
+        top: 208px
+        right: 439px
+        background: url("../img/logo-left.png") no-repeat 50% 50%/cover
+        width: 50px
+        height: 40px
+        animation: floatUpDown2 3s ease-in-out infinite
+
+@keyframes floatUpDown
+  0%, 100%
+    transform: translateY(0)
+  50%
+    transform: translateY(-15px)
+
+@keyframes floatUpDown2
+  0%, 100%
+    transform: translateY(0)
+  50%
+    transform: translateY(-5px)
+
+@keyframes neonBlink
+  0%, 20%, 40%, 100%
+    opacity: 1
+  10%, 35%
+    opacity: 0
