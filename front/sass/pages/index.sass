@@ -56,7 +56,7 @@ body
     background: url("../img/bg-desk.png") no-repeat 14% -28%/cover
     @media screen and (max-width: 1024px)
       background: url("../img/bg-desk.png") no-repeat 69% -28%/cover
-    @media screen and (max-width: 600px)
+    @media screen and (max-width: 600px) and (orientation: portrait)
       background: url("../img/bg-mob.png") no-repeat 50% 25%/cover
     &::before
       content: ''
@@ -109,7 +109,7 @@ body
         width: 601px
         height: 585px
         background: url("../img/sem.png") no-repeat 50% 50%/cover
-        @media screen and (max-width: 600px)
+        @media screen and (max-width: 600px) and (orientation: portrait)
           background: url("../img/sem-mob.png") no-repeat 50% 50%/cover
     .bubble
         position: absolute
@@ -118,7 +118,7 @@ body
         width: 284px
         height: 224px
         background: url("../img/bubble.png") no-repeat 0 0/cover
-        @media screen and (max-width: 600px)
+        @media screen and (max-width: 600px) and (orientation: portrait)
           background: url("../img/bubble-mob.png") no-repeat 0 0/cover
         animation: neonBlink 2.5s linear forwards
         &-txt
